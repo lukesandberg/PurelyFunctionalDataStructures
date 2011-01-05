@@ -21,6 +21,22 @@ namespace PurelyFunctional
 		{
 			return LeftistHeap<T>.Merge(h1, h2);
 		}
+
+		public static IHeap<T> ToHeap<T>(this IEnumerable<T> list) 
+			where T : IComparable<T>
+		{
+			var l = list.Select(i => LeftistHeap<T>.Empty.Insert(i)).ToList();
+			if(l.Count == 0)
+				return LeftistHeap<T>.Empty;
+			for(int s = 2, d = 1; d < l.Count; d *= 2, s *= 2)
+			{
+				for(int i = 0; i < l.Count; i += s)
+				{
+					l[i] = l[i].Merge(l[i + d]);
+				}
+			}
+			return l[0];
+		}
 	}
 	public sealed class LeftistHeap<T> : IHeap<T> where T : IComparable<T>
 	{
@@ -64,7 +80,7 @@ namespace PurelyFunctional
 		}
 
 		private readonly static EmptyHeap empty = new EmptyHeap();
-		public IHeap<T> Empty { get { return empty; } }
+		public static IHeap<T> Empty { get { return empty; } }
 
 		private readonly uint rank;
 		private readonly T value;
@@ -81,7 +97,7 @@ namespace PurelyFunctional
 
 		#region IHeap<T> Members
 
-		public bool IsEmpty { get { return true; } }
+		public bool IsEmpty { get { return false; } }
 
 		public IHeap<T> Insert(T val)
 		{

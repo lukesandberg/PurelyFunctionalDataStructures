@@ -9,7 +9,7 @@ namespace PurelyFunctional
 	{
 		public static IEnumerable<T> InOrder<T>(this IBinaryTree<T> tree)
 		{
-			IStack<IBinaryTree<T>> stack = Stack<IBinaryTree<T>>.Empty;
+			IStack<IBinaryTree<T>> stack = Stack.New<IBinaryTree<T>>();
 			for(IBinaryTree<T> current = tree; !current.IsEmpty || !stack.IsEmpty; current = current.Right)
 			{
 				while(!current.IsEmpty)

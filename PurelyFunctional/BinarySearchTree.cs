@@ -236,7 +236,7 @@ namespace PurelyFunctional
 		#region Helpers
 		private IEnumerable<IBinarySearchTree<K, V>> Enumerate()
 		{
-			var stack = Stack<IBinarySearchTree<K, V>>.Empty;
+			var stack = Stack.New<IBinarySearchTree<K, V>>();
 			for(IBinarySearchTree<K, V> current = this; !current.IsEmpty || !stack.IsEmpty; current = current.Right)
 			{
 				while(!current.IsEmpty)

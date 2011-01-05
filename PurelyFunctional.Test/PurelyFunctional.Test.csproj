@@ -46,7 +46,17 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HeapTest.cs" />
+    <Compile Include="HeapTest.MinTest.g.cs">
+      <DependentUpon>HeapTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueueTest.AmortizedQueueOrdering.g.cs">
+      <DependentUpon>QueueTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="QueueTest.cs" />
+    <Compile Include="QueueTest.RTQueueOrdering.g.cs">
+      <DependentUpon>QueueTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="StackTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StackTest.StackOrdering.g.cs">
