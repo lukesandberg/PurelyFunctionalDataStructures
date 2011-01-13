@@ -16,12 +16,33 @@ namespace PurelyFunctional
 		{
 			return new MemoizedFunc<T>(f);
 		}
+		public static IMemoized<T> Memoize<T>(this T val)
+		{
+			return new MemoizedValue<T>(val);
+		}
+		private sealed class MemoizedValue<T> : IMemoized<T>
+		{
+			private readonly T value;
+			public MemoizedValue(T value)
+			{
+				this.value = value;
+			}
+			#region IMemoized<T> Members
+
+			public T Value
+			{
+				get { return value; }
+			}
+
+			#endregion
+		}
 		private sealed class MemoizedFunc<T> : IMemoized<T>
 		{
 			private T value;
 			private Exception exception;
 			private bool hasRun =false;
 			private readonly Func<T> func;
+			
 			public MemoizedFunc(Func<T> func)
 			{
 				this.func = func;

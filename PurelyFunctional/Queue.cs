@@ -18,7 +18,6 @@ namespace PurelyFunctional
 		{
 			return AmortizedQueue<T>.Empty;
 		}
-
 		public static IQueue<T> NewRT<T>()
 		{
 			return new RealTimeQueue<T>(Stream.New<T>(), Stack.New<T>(), Stream.New<T>());
@@ -140,7 +139,6 @@ namespace PurelyFunctional
 			public IQueue<T> Dequeue()
 			{
 				return Exec(front.Rest, back, schedule);
-				;
 			}
 
 			#endregion

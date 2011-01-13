@@ -44,7 +44,9 @@
   <ItemGroup>
     <Compile Include="BinarySearchTree.cs" />
     <Compile Include="BinaryTree.cs" />
+    <Compile Include="Deque.cs" />
     <Compile Include="Heap.cs" />
+    <Compile Include="List.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Memoize.cs" />
     <Compile Include="Queue.cs" />

@@ -24,7 +24,7 @@ namespace PurelyFunctional
 				r = r.Push(f.Peek());
 			return r;
 		}
-
+		
 		public static IStack<T> New<T>()
 		{
 			return FullStack<T>.Empty;

@@ -16,11 +16,29 @@ namespace PurelyFunctional
 
 	public static class Stream
 	{
+		public static IStream<T> ToStream<T>(this IEnumerable<T> l)
+		{
+			return l.GetEnumerator().ToStream();
+		}
+		public static IStream<T> ToStream<T>(this IEnumerator<T> e)
+		{
+			if(e.MoveNext())
+				return New(e.Current, () => e.ToStream());
+			return New<T>();
+		}
 		public static IStream<T> New<T>()
 		{
 			return EmptyStream<T>.Empty;
 		}
-
+		public static IStream<T> New<T>(T first)
+		{
+			return new FullStream<T>(first, ()=>EmptyStream<T>.Empty);
+		}
+		
+		public static IStream<T> New<T>(T val, IMemoized<IStream<T>> rest)
+		{
+			return new FullStream<T>(val, rest);
+		}
 		public static IStream<T> New<T>(T val, Func<IStream<T>> rest)
 		{
 			return new FullStream<T>(val, rest);
@@ -73,10 +91,13 @@ namespace PurelyFunctional
 		{
 			private readonly T first;
 			private readonly IMemoized<IStream<T>> rest;
-			public FullStream(T first, Func<IStream<T>> rest)
+			public FullStream(T first, IMemoized<IStream<T>> rest)
 			{
 				this.first = first;
-				this.rest = rest.Memoize();
+				this.rest = rest;
+			}
+			public FullStream(T first, Func<IStream<T>> rest) : this(first, rest.Memoize())
+			{
 			}
 			#region IEnumerable<T> Members
 
