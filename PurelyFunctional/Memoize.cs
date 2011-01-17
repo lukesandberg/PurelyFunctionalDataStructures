@@ -64,6 +64,7 @@ namespace PurelyFunctional
 						catch(Exception e)
 						{
 							exception = e;
+							throw;
 						}
 					}
 					if(exception != null)

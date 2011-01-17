@@ -12,7 +12,6 @@ namespace PurelyFunctional.Perf
 		{
 			var q = Queue.NewRT<int>();
 			q = q.Enqueue(1).Enqueue(2).Enqueue(3);
-
 		}
 	}
 }

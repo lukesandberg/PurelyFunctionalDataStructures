@@ -43,6 +43,10 @@ namespace PurelyFunctional
 		{
 			return new FullStream<T>(val, rest);
 		}
+		public static IStream<T> New<T>(T val, IStream<T> rest)
+		{
+			return new FullStream<T>(val, rest.Memoize());
+		}
 		public static IStream<T> Append<T>(this IStream<T> str1, IStream<T> str2)
 		{
 			if(str1.IsEmpty)
@@ -50,6 +54,7 @@ namespace PurelyFunctional
 			else
 				return New<T>(str1.First, () => str1.Rest.Append(str2));
 		}
+
 		private sealed class EmptyStream<T> : IStream<T>
 		{
 			private static readonly EmptyStream<T> empty = new EmptyStream<T>();

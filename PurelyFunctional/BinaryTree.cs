@@ -53,6 +53,7 @@ namespace PurelyFunctional
 			this.left = left ?? Empty;
 			this.right = right ?? Empty;
 		}
+		public BinaryTree(T value) : this(value, Empty, Empty) { }
 
 		#region IBinaryTree<T> Members
 

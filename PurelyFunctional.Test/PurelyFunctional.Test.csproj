@@ -46,10 +46,28 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DequeTest.cs" />
+    <Compile Include="DequeTest.DequeEnumeration.g.cs">
+      <DependentUpon>DequeTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DequeTest.DequeOrdering.g.cs">
+      <DependentUpon>DequeTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DequeTest.DequeReverseOrdering.g.cs">
+      <DependentUpon>DequeTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="HeapTest.cs" />
     <Compile Include="HeapTest.MinTest.g.cs">
       <DependentUpon>HeapTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListTest.cs" />
+    <Compile Include="ListTest.NSListSize.g.cs">
+      <DependentUpon>ListTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListTest.NSListTail.g.cs">
+      <DependentUpon>ListTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\PexAssemblyInfo.cs" />
     <Compile Include="QueueTest.AmortizedQueueOrdering.g.cs">
       <DependentUpon>QueueTest.cs</DependentUpon>
     </Compile>

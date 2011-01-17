@@ -146,8 +146,13 @@ namespace PurelyFunctional
 			#region IEnumerable<T> Members
 			public IEnumerator<T> GetEnumerator()
 			{
-				foreach(var t in front)
-					yield return t;
+				IQueue<T> q = this;
+				while(!q.IsEmpty)
+				{
+					yield return q.Peek();
+					q = q.Dequeue();
+				}
+
 			}
 
 			#endregion

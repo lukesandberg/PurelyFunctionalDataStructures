@@ -17,9 +17,12 @@ namespace PurelyFunctional
 		IDeque<T> Append(IDeque<T> other);
 	}
 
-
 	public static class Deque
 	{
+		public static IDeque<T> New<T>()
+		{
+			return Empty<T>.EmptyTree;
+		}
 		#region Nodes
 		private static class Node
 		{
@@ -223,8 +226,8 @@ namespace PurelyFunctional
 			public override bool IsEmpty { get { return true; } }
 			public override T Left { get { throw new Exception("Empty Dequeue"); } }
 			public override T Right { get { throw new Exception("Empty Dequeue"); } }
-			public override FTree<T> EnqueueLeft(T val) { throw new NotImplementedException(); }
-			public override FTree<T> EnqueueRight(T val) { throw new NotImplementedException(); }
+			public override FTree<T> EnqueueLeft(T val) { return new Single<T>(val); }
+			public override FTree<T> EnqueueRight(T val) { return new Single<T>(val); }
 			public override FTree<T> DequeueLeft() { throw new Exception("Empty Dequeue"); }
 			public override FTree<T> DequeueRight() { throw new Exception("Empty Dequeue"); }
 			public override IEnumerator<T> GetEnumerator() { yield break; }
@@ -253,11 +256,11 @@ namespace PurelyFunctional
 			}
 			public override bool IsEmpty { get { return false; } }
 			public override T Left { get { return value; } }
-			public override T Right { get { throw new Exception("Empty Dequeue"); } }
-			public override FTree<T> EnqueueLeft(T val) { throw new NotImplementedException(); }
-			public override FTree<T> EnqueueRight(T val) { throw new NotImplementedException(); }
-			public override FTree<T> DequeueLeft() { throw new Exception("Empty Dequeue"); }
-			public override FTree<T> DequeueRight() { throw new Exception("Empty Dequeue"); }
+			public override T Right { get { return value; } }
+			public override FTree<T> EnqueueLeft(T nl) { return new Deep<T>(Node.One(nl), Empty<Node<T>>.EmptyTree, Node.One(value)); }
+			public override FTree<T> EnqueueRight(T nr) { return new Deep<T>(Node.One(value), Empty<Node<T>>.EmptyTree, Node.One(nr)); }
+			public override FTree<T> DequeueLeft() { return Empty<T>.EmptyTree; }
+			public override FTree<T> DequeueRight() { return Empty<T>.EmptyTree; }
 			public override IEnumerator<T> GetEnumerator() { yield return value; }
 
 			#region concatenation double dispatch
@@ -333,7 +336,7 @@ namespace PurelyFunctional
 				if(right.Size > 1)
 					return new Deep<T>(left, middle, right.DequeueRight());
 				if(!middle.IsEmpty)
-					return new Deep<T>(middle.Left, middle.DequeueRight(), middle.Right);
+					return new Deep<T>(left, middle.DequeueRight(), middle.Right);
 				if(left.Size > 1)
 					return new Deep<T>(left.DequeueRight(), middle, new One<T>(left.Right));
 				return new Single<T>(left.Right);

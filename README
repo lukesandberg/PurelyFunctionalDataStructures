@@ -1,0 +1,4 @@
+This is an implementation of some of the datastructures described in Chris 
+Okasaki's Book "Purely Functional Data Structures"  all the implmentations 
+are in C# and try to implement the described algorithms as faithfully as 
+possible while still implementing in an object oriented manner.
