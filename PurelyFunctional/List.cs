@@ -136,7 +136,7 @@ namespace PurelyFunctional
 
 		}
 	}
-	public static class SList
+	public static class List
 	{
 		public static IList<T> New<T>()
 		{

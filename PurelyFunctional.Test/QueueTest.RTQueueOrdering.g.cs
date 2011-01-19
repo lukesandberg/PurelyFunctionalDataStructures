@@ -18,18 +18,5 @@ namespace PurelyFunctional.Test
 {
 	public partial class QueueTest
 	{
-[TestMethod]
-[PexGeneratedBy(typeof(QueueTest))]
-[PexRaisedException(typeof(PexAssertFailedException))]
-public void RTQueueOrderingThrowsPexAssertFailedException14()
-{
-    int[] ints = new int[6];
-    ints[0] = 1;
-    ints[1] = 256;
-    ints[2] = 8;
-    ints[3] = 16;
-    ints[5] = 4;
-    this.RTQueueOrdering<int>(ints);
-}
 	}
 }

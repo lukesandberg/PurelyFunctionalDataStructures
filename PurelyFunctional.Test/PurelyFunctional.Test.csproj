@@ -72,6 +72,9 @@
       <DependentUpon>QueueTest.cs</DependentUpon>
     </Compile>
     <Compile Include="QueueTest.cs" />
+    <Compile Include="QueueTest.HMQueueOrdering.g.cs">
+      <DependentUpon>QueueTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="QueueTest.RTQueueOrdering.g.cs">
       <DependentUpon>QueueTest.cs</DependentUpon>
     </Compile>
