@@ -20,21 +20,6 @@ namespace PurelyFunctional.Test
 	{
 [TestMethod]
 [PexGeneratedBy(typeof(QueueTest))]
-[PexRaisedException(typeof(Exception))]
-public void HMQueueOrderingThrowsException214()
-{
-    int[] ints = new int[8];
-    ints[0] = 512;
-    ints[1] = 8;
-    ints[2] = 128;
-    ints[3] = 1;
-    ints[5] = 529;
-    ints[6] = 16;
-    ints[7] = 257;
-    this.HMQueueOrdering<int>(ints);
-}
-[TestMethod]
-[PexGeneratedBy(typeof(QueueTest))]
 [PexRaisedException(typeof(PexAssertFailedException))]
 public void HMQueueOrderingThrowsPexAssertFailedException670()
 {
@@ -48,8 +33,36 @@ public void HMQueueOrderingThrowsPexAssertFailedException670()
 }
 [TestMethod]
 [PexGeneratedBy(typeof(QueueTest))]
-[PexRaisedException(typeof(PexAssertFailedException))]
-public void HMQueueOrderingThrowsPexAssertFailedException285()
+public void HMQueueOrdering15()
+{
+    int[] ints = new int[9];
+    ints[1] = 1;
+    ints[2] = 2;
+    ints[3] = 512;
+    ints[4] = 3;
+    ints[5] = 513;
+    ints[6] = 272;
+    ints[7] = 256;
+    ints[8] = 257;
+    this.HMQueueOrdering<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(QueueTest))]
+public void HMQueueOrdering557()
+{
+    int[] ints = new int[8];
+    ints[0] = 512;
+    ints[1] = 8;
+    ints[2] = 128;
+    ints[3] = 1;
+    ints[5] = 529;
+    ints[6] = 16;
+    ints[7] = 257;
+    this.HMQueueOrdering<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(QueueTest))]
+public void HMQueueOrdering103()
 {
     int[] ints = new int[24];
     ints[0] = 64;
@@ -75,21 +88,6 @@ public void HMQueueOrderingThrowsPexAssertFailedException285()
     ints[21] = 4;
     ints[22] = 140;
     ints[23] = 5;
-    this.HMQueueOrdering<int>(ints);
-}
-[TestMethod]
-[PexGeneratedBy(typeof(QueueTest))]
-public void HMQueueOrdering15()
-{
-    int[] ints = new int[9];
-    ints[1] = 1;
-    ints[2] = 2;
-    ints[3] = 512;
-    ints[4] = 3;
-    ints[5] = 513;
-    ints[6] = 272;
-    ints[7] = 256;
-    ints[8] = 257;
     this.HMQueueOrdering<int>(ints);
 }
 	}

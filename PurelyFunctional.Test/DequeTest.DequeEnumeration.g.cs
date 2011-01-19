@@ -29,5 +29,47 @@ public void DequeEnumeration563()
     ints[5] = 257;
     this.DequeEnumeration<int>(ints);
 }
+[TestMethod]
+[PexGeneratedBy(typeof(DequeTest))]
+public void DequeEnumeration325()
+{
+    int[] ints = new int[7];
+    ints[1] = 1;
+    ints[2] = 65;
+    ints[3] = 5;
+    ints[4] = 2;
+    ints[5] = 8;
+    ints[6] = 9;
+    this.DequeEnumeration<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(DequeTest))]
+public void DequeEnumeration557()
+{
+    int[] ints = new int[8];
+    ints[0] = 512;
+    ints[1] = 8;
+    ints[2] = 128;
+    ints[3] = 1;
+    ints[5] = 529;
+    ints[6] = 16;
+    ints[7] = 257;
+    this.DequeEnumeration<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(DequeTest))]
+public void DequeEnumeration15()
+{
+    int[] ints = new int[9];
+    ints[1] = 1;
+    ints[2] = 2;
+    ints[3] = 512;
+    ints[4] = 3;
+    ints[5] = 513;
+    ints[6] = 272;
+    ints[7] = 256;
+    ints[8] = 257;
+    this.DequeEnumeration<int>(ints);
+}
 	}
 }

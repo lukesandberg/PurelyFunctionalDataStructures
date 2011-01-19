@@ -27,5 +27,42 @@ public void NSListTail286()
     ints[2] = 1;
     this.NSListTail<int>(ints);
 }
+[TestMethod]
+[PexGeneratedBy(typeof(ListTest))]
+[PexRaisedException(typeof(PexAssertFailedException))]
+public void NSListTailThrowsPexAssertFailedException932()
+{
+    int[] ints = new int[4];
+    ints[0] = 257;
+    ints[1] = 258;
+    ints[2] = 2;
+    ints[3] = 3;
+    this.NSListTail<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(ListTest))]
+[PexRaisedException(typeof(PexAssertFailedException))]
+public void NSListTailThrowsPexAssertFailedException57()
+{
+    int[] ints = new int[5];
+    ints[1] = 129;
+    ints[2] = 8;
+    ints[3] = 64;
+    ints[4] = 1;
+    this.NSListTail<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(ListTest))]
+[PexRaisedException(typeof(PexAssertFailedException))]
+public void NSListTailThrowsPexAssertFailedException607()
+{
+    int[] ints = new int[6];
+    ints[0] = 2;
+    ints[1] = 131;
+    ints[2] = 3;
+    ints[3] = 4;
+    ints[5] = 1;
+    this.NSListTail<int>(ints);
+}
 	}
 }

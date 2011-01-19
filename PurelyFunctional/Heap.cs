@@ -26,19 +26,20 @@ namespace PurelyFunctional
 		public static IHeap<T> ToHeap<T>(this IEnumerable<T> list) 
 			where T : IComparable<T>
 		{
+
 			var l = list.Select(i => LeftistHeap<T>.Empty.Insert(i)).ToList();
-			if(l.Count == 0)
-				return LeftistHeap<T>.Empty;
-			for(int s = 2, d = 1; d < l.Count; d *= 2, s *= 2)
-			{
-				for(int i = 0; i < l.Count; i += s)
-				{
-					l[i] = l[i].Merge(l[i + d]);
-				}
-			}
-			return l[0];
+			return l.PairwiseMerge();
 		}
 
+		private static IHeap<T> PairwiseMerge<T>(this IEnumerable<IHeap<T>> heaps)
+			where T : IComparable<T>
+		{
+			if(heaps.Count() == 1)
+				return heaps.First();
+			var evens = heaps.Where((h, i) => i % 2 == 0);
+			var odds = heaps.Where((h, i) => i % 2 == 1);
+			return evens.PairwiseMerge().Merge(odds.PairwiseMerge());
+		}
 		public static IHeap<T> New<T>() where T : IComparable<T>
 		{
 			return LeftistHeap<T>.Empty;

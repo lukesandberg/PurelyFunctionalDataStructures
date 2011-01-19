@@ -18,5 +18,17 @@ namespace PurelyFunctional.Test
 {
 	public partial class QueueTest
 	{
+[TestMethod]
+[PexGeneratedBy(typeof(QueueTest))]
+public void RTQueueOrdering563()
+{
+    int[] ints = new int[6];
+    ints[1] = 264;
+    ints[2] = 272;
+    ints[3] = 320;
+    ints[4] = 256;
+    ints[5] = 257;
+    this.RTQueueOrdering<int>(ints);
+}
 	}
 }

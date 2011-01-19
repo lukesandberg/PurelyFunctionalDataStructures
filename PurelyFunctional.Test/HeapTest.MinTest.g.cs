@@ -40,5 +40,100 @@ public void MinTest924()
     ints[0] = 2;
     this.MinTest<int>(ints);
 }
+[TestMethod]
+[PexGeneratedBy(typeof(HeapTest))]
+public void MinTest506()
+{
+    int[] ints = new int[2];
+    ints[1] = 1;
+    this.MinTest<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(HeapTest))]
+[PexRaisedException(typeof(ArgumentOutOfRangeException))]
+public void MinTestThrowsArgumentOutOfRangeException371()
+{
+    int[] ints = new int[3];
+    ints[0] = 2;
+    this.MinTest<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(HeapTest))]
+[PexRaisedException(typeof(ArgumentOutOfRangeException))]
+public void MinTestThrowsArgumentOutOfRangeException950()
+{
+    int[] ints = new int[3];
+    ints[0] = 363;
+    ints[1] = 363;
+    this.MinTest<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(HeapTest))]
+public void MinTest457()
+{
+    int[] ints = new int[4];
+    ints[0] = 261;
+    ints[1] = 14;
+    ints[2] = 14;
+    ints[3] = 14;
+    this.MinTest<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(HeapTest))]
+[PexRaisedException(typeof(ArgumentOutOfRangeException))]
+public void MinTestThrowsArgumentOutOfRangeException356()
+{
+    int[] ints = new int[5];
+    ints[0] = 2;
+    this.MinTest<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(HeapTest))]
+[PexRaisedException(typeof(ArgumentOutOfRangeException))]
+public void MinTestThrowsArgumentOutOfRangeException663()
+{
+    int[] ints = new int[5];
+    ints[1] = 1;
+    ints[3] = 1;
+    this.MinTest<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(HeapTest))]
+public void MinTest316()
+{
+    int[] ints = new int[8];
+    ints[0] = -2147483332;
+    ints[1] = -2147483332;
+    ints[2] = -2147483332;
+    ints[3] = -2147483332;
+    ints[4] = -2147483332;
+    ints[5] = -2147483332;
+    ints[6] = -2147483332;
+    ints[7] = -2147483332;
+    this.MinTest<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(HeapTest))]
+[PexRaisedException(typeof(ArgumentOutOfRangeException))]
+public void MinTestThrowsArgumentOutOfRangeException444()
+{
+    int[] ints = new int[9];
+    this.MinTest<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(HeapTest))]
+public void MinTest259()
+{
+    int[] ints = new int[8];
+    ints[0] = 529;
+    ints[1] = 260;
+    ints[2] = -2147483391;
+    ints[3] = -2147483391;
+    ints[4] = -2147483391;
+    ints[5] = -2147483391;
+    ints[6] = -2147483391;
+    ints[7] = -2147483391;
+    this.MinTest<int>(ints);
+}
 	}
 }

@@ -18,5 +18,77 @@ namespace PurelyFunctional.Test
 {
 	public partial class DequeTest
 	{
+[TestMethod]
+[PexGeneratedBy(typeof(DequeTest))]
+public void DequeReverseOrdering563()
+{
+    int[] ints = new int[6];
+    ints[1] = 264;
+    ints[2] = 272;
+    ints[3] = 320;
+    ints[4] = 256;
+    ints[5] = 257;
+    this.DequeReverseOrdering<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(DequeTest))]
+public void DequeReverseOrdering325()
+{
+    int[] ints = new int[7];
+    ints[1] = 1;
+    ints[2] = 65;
+    ints[3] = 5;
+    ints[4] = 2;
+    ints[5] = 8;
+    ints[6] = 9;
+    this.DequeReverseOrdering<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(DequeTest))]
+public void DequeReverseOrdering557()
+{
+    int[] ints = new int[8];
+    ints[0] = 512;
+    ints[1] = 8;
+    ints[2] = 128;
+    ints[3] = 1;
+    ints[5] = 529;
+    ints[6] = 16;
+    ints[7] = 257;
+    this.DequeReverseOrdering<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(DequeTest))]
+public void DequeReverseOrdering15()
+{
+    int[] ints = new int[9];
+    ints[1] = 1;
+    ints[2] = 2;
+    ints[3] = 512;
+    ints[4] = 3;
+    ints[5] = 513;
+    ints[6] = 272;
+    ints[7] = 256;
+    ints[8] = 257;
+    this.DequeReverseOrdering<int>(ints);
+}
+[TestMethod]
+[PexGeneratedBy(typeof(DequeTest))]
+public void DequeReverseOrdering322()
+{
+    int[] ints = new int[12];
+    ints[1] = 1;
+    ints[2] = 257;
+    ints[3] = 769;
+    ints[4] = 130;
+    ints[5] = 640;
+    ints[6] = 128;
+    ints[7] = 514;
+    ints[8] = 131;
+    ints[9] = 641;
+    ints[10] = 129;
+    ints[11] = 16;
+    this.DequeReverseOrdering<int>(ints);
+}
 	}
 }
