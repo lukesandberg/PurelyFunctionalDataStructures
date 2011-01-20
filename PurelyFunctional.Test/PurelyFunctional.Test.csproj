@@ -83,6 +83,7 @@
     <Compile Include="StackTest.StackOrdering.g.cs">
       <DependentUpon>StackTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="StreamTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PurelyFunctional\PurelyFunctional.csproj">

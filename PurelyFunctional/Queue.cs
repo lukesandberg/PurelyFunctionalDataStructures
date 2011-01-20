@@ -135,7 +135,7 @@ namespace PurelyFunctional
 			private readonly IStack<T> b_orig;
 			private readonly IStack<T> b_rev;
 
-			public ReversingState(uint valid, IStack<T> f_orig, IStack<T> f_rev, IStack<T> b_orig, IStack<T> b_rev)
+			private ReversingState(uint valid, IStack<T> f_orig, IStack<T> f_rev, IStack<T> b_orig, IStack<T> b_rev)
 			{
 				this.valid = valid;
 				this.f_orig = f_orig;
@@ -143,7 +143,10 @@ namespace PurelyFunctional
 				this.b_orig = b_orig;
 				this.b_rev = b_rev;
 			}
-
+			public ReversingState(IStack<T> f_orig, IStack<T> b_orig)
+				: this(0, f_orig, Stack.New<T>(), b_orig, Stack.New<T>())
+			{
+			}
 			#region IRotationState<T> Members
 
 			public bool IsDone { get { return false; } }
@@ -256,7 +259,7 @@ namespace PurelyFunctional
 			{
 				if(length_back <= length_front)
 					return Exec2(length_front, front, state, length_back, back);
-				var newstate = new ReversingState<T>(0, front, Stack.New<T>(), back, Stack.New<T>());
+				var newstate = new ReversingState<T>(front, back);
 				return Exec2(length_front + length_back, front, newstate, 0, Stack.New<T>());
 			}
 

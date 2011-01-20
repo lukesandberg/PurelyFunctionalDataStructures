@@ -13,7 +13,6 @@ namespace PurelyFunctional
 		IStream<T> Add(T val);
 	}
 
-
 	public static class Stream
 	{
 		public static IStream<T> ToStream<T>(this IEnumerable<T> l)
